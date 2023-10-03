@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="myBean" class="com.Ricardo.MyClass">
+        <!-- 设置myBean的属性值，假设MyClass有一个名为 "name" 的属性 -->
+        <property name="name" value="Lijun Guo" />
+    </bean>
+
+    <!-- 配置另一个Bean，假设它依赖于 "myBean" -->
+    <bean id="useMyClass" class="com.Ricardo.UseMyClass">
+        <property name="myBean" ref="myBean" />
+    </bean>
+
+
+
+
+</beans>
