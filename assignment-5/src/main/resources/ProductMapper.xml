@@ -1,0 +1,11 @@
+<select id="findProductsByNameAndQuantity" parameterType="map" resultType="edu.whu.demo.entity.Product">
+    SELECT * FROM product WHERE name = #{name} AND stock_quantity >= #{quantity}
+</select>
+        <!-- ProductMapper.xml -->
+<select id="findProductsWithSuppliers" resultType="Product">
+    SELECT p.id AS product_id, p.name AS product_name,
+    s.id AS supplier_id, s.name AS supplier_name, s.address AS supplier_address
+    FROM product p
+    LEFT JOIN product_supplier ps ON p.id = ps.product_id
+    LEFT JOIN supplier s ON ps.supplier_id = s.id
+</select>
